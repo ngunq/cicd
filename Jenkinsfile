@@ -12,9 +12,9 @@ def GRPC_ENABLE=false
 pipeline {
     agent any
     parameters {
-        // gitParameter (branchFilter: 'origin/(.*)', defaultValue: 'master', name: 'BRANCH', type: 'PT_BRANCH',
-        //         useRepository: "${project1}", listSize: "10", quickFilterEnabled: true,
-        //         sortMode: 'DESCENDING_SMART')
+        gitParameter (branchFilter: 'origin/(.*)', defaultValue: 'master', name: 'BRANCH', type: 'PT_BRANCH',
+                useRepository: "${project1}", listSize: "10", quickFilterEnabled: true,
+                sortMode: 'DESCENDING_SMART')
     //     gitParameter(
     //         branchFilter: "origin/(.*)",
     //         defaultValue: "master",
@@ -28,14 +28,14 @@ pipeline {
     //         useRepository: "${project1}"
     //    )
 
-       listGitBranches(
-            branchFilter: 'origin/(.*)',
-            defaultValue: 'master',
-            name: 'BRANCH',
-            type: 'BRANCH',
-            remoteURL: "${project1}",
-            credentialsId: 'github_local'
-        )
+    //    listGitBranches(
+    //         branchFilter: 'origin/(.*)',
+    //         defaultValue: 'master',
+    //         name: 'BRANCH',
+    //         type: 'BRANCH',
+    //         remoteURL: "${project1}",
+    //         credentialsId: 'github_local'
+    //     )
 
 
     }
