@@ -11,12 +11,12 @@ def GRPC_ENABLE=false
 
 pipeline {
     agent none
-    parameters {
-        gitParameter (branchFilter: 'origin/(.*)', defaultValue: 'master', name: 'BRANCH', type: 'PT_BRANCH',
-                useRepository: "${project1}", listSize: "10", quickFilterEnabled: true,
-                sortMode: 'DESCENDING_SMART')
+    // parameters {
+    //     gitParameter (branchFilter: 'origin/(.*)', defaultValue: 'master', name: 'BRANCH', type: 'PT_BRANCH',
+    //             useRepository: "${project1}", listSize: "10", quickFilterEnabled: true,
+    //             sortMode: 'DESCENDING_SMART')
 
-    }
+    // }
     stages {
         stage ('BUILD'){
             agent any
