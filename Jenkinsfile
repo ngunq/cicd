@@ -15,18 +15,27 @@ pipeline {
         // gitParameter (branchFilter: 'origin/(.*)', defaultValue: 'master', name: 'BRANCH', type: 'PT_BRANCH',
         //         useRepository: "${project1}", listSize: "10", quickFilterEnabled: true,
         //         sortMode: 'DESCENDING_SMART')
-        gitParameter(
-            branchFilter: "origin/(.*)",
-            defaultValue: "master",
-            description: '',
-            listSize: '10',
+    //     gitParameter(
+    //         branchFilter: "origin/(.*)",
+    //         defaultValue: "master",
+    //         description: '',
+    //         listSize: '10',
+    //         name: 'BRANCH',
+    //         quickFilterEnabled: true,
+    //         selectedValue: 'NONE',
+    //         sortMode: 'DESCENDING_SMART',
+    //         type: 'PT_BRANCH_TAG',
+    //         useRepository: "${project1}"
+    //    )
+
+       listGitBranches(
+            branchFilter: 'origin/(.*)',
+            defaultValue: 'master',
             name: 'BRANCH',
-            quickFilterEnabled: true,
-            selectedValue: 'NONE',
-            sortMode: 'DESCENDING_SMART',
-            type: 'PT_BRANCH_TAG',
-            useRepository: "${project1}"
-       )
+            type: 'BRANCH',
+            remoteURL: "${project1}",
+            credentialsId: 'github_local'
+        )
 
 
     }
