@@ -28,7 +28,7 @@ pipeline {
                             currentBuild.displayName = "${BUILD_NUMBER}-${params.BRANCH}"
                         }
                         dir(".") {
-                            git url: "${project1}", credentialsId:'gitlablocal-ssh', branch: "${params.BRANCH}"
+                            git url: "${project1}", credentialsId:'github_local', branch: "${params.BRANCH}"
                             sh 'echo $PWD'
                             sh 'ls -lh'
                         }
