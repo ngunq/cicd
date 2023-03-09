@@ -10,7 +10,7 @@ def HTTP_ENABLE=true
 def GRPC_ENABLE=false
 
 pipeline {
-    agent none
+    agent any
     parameters {
         // gitParameter (branchFilter: 'origin/(.*)', defaultValue: 'master', name: 'BRANCH', type: 'PT_BRANCH',
         //         useRepository: "${project1}", listSize: "10", quickFilterEnabled: true,
